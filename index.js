@@ -40,6 +40,11 @@ io.on("connection", (socket) => {
     console.log("emit_array_objects ==> ", args);
   });
 
+  socket.on("emit_buffer", (args) => {
+    console.log("emit_buffer ==> ", args);
+    console.log("emit_buffer (utf8) ==> ", args.toString("utf8"));
+  });
+
   //Emiting Events
   setInterval(() => {
     socket.emit("null_type", null);
